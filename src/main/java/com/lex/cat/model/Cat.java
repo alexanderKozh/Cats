@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Objects;
 
 @Entity
 @Table(name = "cats")
@@ -66,5 +67,28 @@ public class Cat {
 
     public void setWhiskersLength(Integer whiskersLength) {
         this.whiskersLength = whiskersLength;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
+
+        Cat cat = (Cat) o;
+
+        return getName().equals(cat.getName()) &&
+                getColor() == cat.getColor() &&
+                getTailLength().equals(cat.getTailLength()) &&
+                getWhiskersLength().equals(cat.getWhiskersLength());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getColor(), getTailLength(), getWhiskersLength());
     }
 }
