@@ -1,0 +1,16 @@
+version: '2.4'
+
+services:
+
+  postgres:
+    image: yzh44yzh/wg_forge_backend_env:1.1
+    restart: on-failure
+    ports:
+      - "5435:5432"
+
+  app:
+    image: cat:local
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
