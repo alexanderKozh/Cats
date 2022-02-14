@@ -1,0 +1,17 @@
+# Intellij
+*.ipr
+*.iws
+*.iml
+.idea/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Maven
+target/
+
+.history
+.cache
+.DS_Store
