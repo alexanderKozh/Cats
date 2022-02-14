@@ -26,7 +26,7 @@ public class RateFilter implements Filter {
     private Bucket bucket;
 
     @PostConstruct
-    public void init(){
+    public void init() {
         Bandwidth limit = Bandwidth.classic(
                 RATE_LIMIT,
                 Refill.greedy(

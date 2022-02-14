@@ -3,7 +3,10 @@ package com.lex.cat.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.lex.cat.model.type.CatColor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "cats")
